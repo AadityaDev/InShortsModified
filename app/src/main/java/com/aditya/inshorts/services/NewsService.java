@@ -15,15 +15,15 @@ import java.util.concurrent.Callable;
 
 import okhttp3.Request;
 
-public class TweetClipService {
+public class NewsService {
 
     private final String TAG = this.getClass().getSimpleName();
 
-    public ListenableFuture<JSONArray> getProducts() {
+    public ListenableFuture<JSONArray> getNews() {
         return ExecutorUtils.getBackgroundPool().submit(new Callable<JSONArray>() {
             @Override
             public JSONArray call() throws Exception {
-                Request request = RequestGenerator.get(AppAPI.PRODUCT_URL);
+                Request request = RequestGenerator.get(AppAPI.NEWS_URL);
                 Log.d(TAG, request.toString());
                 String result = RequestHandler.makeRequestAndValidate(request);
                 Log.d(TAG, result);

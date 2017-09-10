@@ -2,7 +2,7 @@ package com.aditya.inshorts.network;
 
 import android.os.StrictMode;
 
-import com.aditya.inshorts.services.TweetClipService;
+import com.aditya.inshorts.services.NewsService;
 
 import net.jcip.annotations.GuardedBy;
 
@@ -18,7 +18,7 @@ public class Factory {
     @GuardedBy("LOCK")
     private static OkHttpClient mOkHttpClient;
     @GuardedBy("LOCK")
-    private static TweetClipService tweetClipService;
+    private static NewsService newsService;
 
     public static OkHttpClient getOkHTTPClient() {
         synchronized (LOCK) {
@@ -32,13 +32,13 @@ public class Factory {
         return mOkHttpClient;
     }
 
-    public static TweetClipService getTweetClipService() {
+    public static NewsService getNewsService() {
         synchronized (LOCK) {
-            if (tweetClipService == null) {
-                tweetClipService = new TweetClipService();
+            if (newsService == null) {
+                newsService = new NewsService();
             }
         }
-        return tweetClipService;
+        return newsService;
     }
 
     public static void setUpThreadPolicy() {

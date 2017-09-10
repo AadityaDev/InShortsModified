@@ -1,0 +1,81 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context="com.aditya.inshorts.fragments.NewsListFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_suggest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="11dp"
+                android:layout_marginEnd="@dimen/dimen_6dp"
+                android:layout_marginLeft="@dimen/dimen_4dp"
+                android:layout_marginRight="@dimen/dimen_6dp"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/red"
+                android:gravity="center_vertical"
+                android:imeOptions="actionSearch"
+                android:inputType="textPhonetic"
+                android:paddingEnd="@dimen/dimen_26dp"
+                android:paddingLeft="@dimen/dimen_8dp"
+                android:paddingRight="@dimen/dimen_26dp"
+                android:paddingStart="@dimen/dimen_8dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/text_14sp" />
+
+            <ImageView
+                android:id="@+id/close_search_box"
+                android:layout_width="@dimen/dimen_42dp"
+                android:layout_height="@dimen/dimen_42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:padding="12dp"
+                android:src="@mipmap/ic_close_search" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/universities_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/menu_red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            fab:menu_labels_ellipsize="end"
+            fab:menu_labels_singleLine="true"
+            fab:menu_backgroundColor="#ccffffff"
+            >
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -3,11 +3,30 @@ package com.aditya.inshorts.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Date;
+
 public class News implements Parcelable{
 
     private long id;
+    private String category;
+    private String hostname;
     private String title;
-    private String subTitle;
+    private Date timestamp;
+    private String publisher;
+    private String url;
+
+    public News(){
+
+    }
+
+    public News(String category,String hostname,String title,Date timestamp,String publisher,String url){
+        this.category=category;
+        this.hostname=hostname;
+        this.title=title;
+        this.timestamp=timestamp;
+        this.publisher=publisher;
+        this.url=url;
+    }
 
     public long getId() {
         return id;
@@ -15,6 +34,22 @@ public class News implements Parcelable{
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 
     public String getTitle() {
@@ -25,27 +60,37 @@ public class News implements Parcelable{
         this.title = title;
     }
 
-    public String getSubTitle() {
-        return subTitle;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
-    public void setSubTitle(String subTitle) {
-        this.subTitle = subTitle;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public News(){
-
+    public String getPublisher() {
+        return publisher;
     }
 
-    public News(String title,String subTitle){
-        this.title=title;
-        this.subTitle=subTitle;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     protected News(Parcel in) {
         id = in.readLong();
+        category = in.readString();
+        hostname = in.readString();
         title = in.readString();
-        subTitle = in.readString();
+        publisher = in.readString();
+        url = in.readString();
     }
 
     public static final Creator<News> CREATOR = new Creator<News>() {
@@ -68,7 +113,10 @@ public class News implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(id);
+        parcel.writeString(category);
+        parcel.writeString(hostname);
         parcel.writeString(title);
-        parcel.writeString(subTitle);
+        parcel.writeString(publisher);
+        parcel.writeString(url);
     }
 }

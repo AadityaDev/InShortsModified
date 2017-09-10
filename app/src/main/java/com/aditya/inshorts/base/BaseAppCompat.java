@@ -48,4 +48,5 @@ public class BaseAppCompat extends AppCompatActivity {
     public String getTAG() {
         return TAG;
     }
+
 }

@@ -3,7 +3,7 @@ package com.aditya.inshorts.constants;
 public class AppAPI {
 
     public static final String PRODUCT_HUNT_PREFIX = "https://www.kickstarter.com/";
-    public static final String PRODUCT_URL = "http://starlord.hackerearth.com/kickstarter";
+    public static final String NEWS_URL = "http://starlord.hackerearth.com/newsjson";
     public static final String AND = "&";
     public static final String NAME = "name=";
     public static final String EMAIL = "email=";
